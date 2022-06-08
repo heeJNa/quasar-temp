@@ -11,38 +11,11 @@
           aria-label="Menu"
         />
         <q-toolbar-title>
-          Quasar App
+          {{title}}
         </q-toolbar-title>
         <q-space/>
         <div class="q-gutter-sm row items-center no-wrap">
-          <q-btn round dense flat color="white" :icon="$q.fullscreen.isActive ? 'fullscreen_exit' : 'fullscreen'"
-                 @click="$q.fullscreen.toggle()"
-                 v-if="$q.screen.gt.sm">
-          </q-btn>
-          <q-btn round dense flat color="white" icon="fab fa-github" type="a" href="https://github.com/pratik227/quasar-admin" target="_blank">
-          </q-btn>
-          <q-btn round dense flat icon="fas fa-heart" style="color:#9d4182 !important;" type="a" href="https://github.com/sponsors/pratik227" target="_blank">
-          </q-btn>
-          <q-btn round dense flat color="white" icon="notifications">
-            <q-badge color="red" text-color="white" floating>
-              5
-            </q-badge>
-            <q-menu
-            >
-              <q-list style="min-width: 100px">
-                <messages></messages>
-                <q-card class="text-center no-shadow no-border">
-                  <q-btn label="View All" style="max-width: 120px !important;" flat dense
-                         class="text-indigo-8"></q-btn>
-                </q-card>
-              </q-list>
-            </q-menu>
-          </q-btn>
-          <q-btn round flat>
-            <q-avatar size="26px">
-              <img src="https://cdn.quasar.dev/img/boy-avatar.png">
-            </q-avatar>
-          </q-btn>
+
         </div>
       </q-toolbar>
     </q-header>
@@ -52,9 +25,10 @@
       show-if-above
       bordered
       class="bg-primary text-white"
+      width="200"
     >
       <q-list>
-        <q-item to="/" active-class="q-item-no-link-highlighting">
+        <!-- <q-item to="/" active-class="q-item-no-link-highlighting">
           <q-item-section avatar>
             <q-icon name="dashboard"/>
           </q-item-section>
@@ -72,8 +46,7 @@
         </q-item>
         <q-expansion-item
           icon="pages"
-          label="Pages"
-        >
+          label="Pages"      >
           <q-list class="q-pl-lg">
             <q-item to="/Login-1" active-class="q-item-no-link-highlighting">
               <q-item-section avatar>
@@ -215,16 +188,16 @@
           <q-item-section>
             <q-item-label>Cards</q-item-label>
           </q-item-section>
-        </q-item>
-        <q-item to="/Tables" active-class="q-item-no-link-highlighting">
+        </q-item> -->
+        <q-item to="/Tables" active-class="q-item-no-link-highlighting" @click="changeTitle('계약크롤링')">
           <q-item-section avatar>
             <q-icon name="table_chart"/>
           </q-item-section>
           <q-item-section>
-            <q-item-label>Tables</q-item-label>
+            <q-item-label>계약크롤링</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item to="/Contact" active-class="q-item-no-link-highlighting">
+        <q-item to="/Contact" active-class="q-item-no-link-highlighting" @click="changeTitle('Contact')">
           <q-item-section avatar>
             <q-icon name="person"/>
           </q-item-section>
@@ -232,24 +205,24 @@
             <q-item-label>Contact</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item to="/Checkout" active-class="q-item-no-link-highlighting">
+        <!-- <q-item to="/Checkout" active-class="q-item-no-link-highlighting">
           <q-item-section avatar>
             <q-icon name="check_circle_outline"/>
           </q-item-section>
           <q-item-section>
             <q-item-label>Checkout</q-item-label>
           </q-item-section>
-        </q-item>
+        </q-item> -->
 
-        <!--        not completed-->
-        <q-item to="/Calendar" active-class="q-item-no-link-highlighting">
+        <!-- not completed-->
+        <!-- <q-item to="/Calendar" active-class="q-item-no-link-highlighting">
           <q-item-section avatar>
             <q-icon name="date_range"/>
           </q-item-section>
           <q-item-section>
             <q-item-label>Calendar</q-item-label>
           </q-item-section>
-        </q-item>
+        </q-item> -->
 
 <!--        not completed-->
 <!--        <q-item to="/Taskboard" active-class="q-item-no-link-highlighting">-->
@@ -261,7 +234,7 @@
 <!--          </q-item-section>-->
 <!--        </q-item>-->
 
-        <q-item to="/Pagination" active-class="q-item-no-link-highlighting">
+        <!-- <q-item to="/Pagination" active-class="q-item-no-link-highlighting">
           <q-item-section avatar>
             <q-icon name="date_range"/>
           </q-item-section>
@@ -276,8 +249,8 @@
           <q-item-section>
             <q-item-label>Product Catalogues</q-item-label>
           </q-item-section>
-        </q-item>
-        <q-expansion-item
+        </q-item> -->
+        <!-- <q-expansion-item
           icon="menu_open"
           label="Menu Levels"
         >
@@ -311,7 +284,7 @@
               </q-item>
             </q-expansion-item>
           </q-expansion-item>
-        </q-expansion-item>
+        </q-expansion-item> -->
       </q-list>
     </q-drawer>
 
@@ -337,12 +310,16 @@ export default defineComponent({
 
   setup () {
     const leftDrawerOpen = ref(false)
-
+    const title = ref('계약크롤링')
     return {
       leftDrawerOpen,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
-      }
+      },
+      changeTitle (value) {
+          title.value = value
+      },
+      title
     }
   }
 })

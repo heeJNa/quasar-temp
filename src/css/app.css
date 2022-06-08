@@ -1,1 +1,4 @@
 /* app global css */
+.q-app .q-layout .q-drawer-container .q-drawer{
+  width: 150px;
+}
