@@ -9,7 +9,7 @@
     </q-card-section>
      <q-tab-panels v-model="tab" animated>
           <q-tab-panel name="작업자관리">
-            <tables-basic></tables-basic>
+            <tables-work-management></tables-work-management>
           </q-tab-panel>
           <q-tab-panel name="작업관리">
             <table-actions></table-actions>
@@ -26,7 +26,7 @@ export default defineComponent({
   name: "Tables",
   components: {
     TableActions: defineAsyncComponent(() => import('components/tables/TableActions')),
-    TablesBasic: defineAsyncComponent(() => import('components/tables/TableRPA'))
+    TablesWorkManagement: defineAsyncComponent(() => import('components/tables/WorkManagementTable'))
   },
   setup() {
     return {
