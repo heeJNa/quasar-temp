@@ -28,23 +28,7 @@
       width="200"
     >
       <q-list>
-        <!-- <q-item to="/" active-class="q-item-no-link-highlighting">
-          <q-item-section avatar>
-            <q-icon name="dashboard"/>
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Dashboard</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item to="/Dashboard2" active-class="q-item-no-link-highlighting">
-          <q-item-section avatar>
-            <q-icon name="dashboard"/>
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>CRM Dashboard</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-expansion-item
+        <!-- <q-expansion-item
           icon="pages"
           label="Pages"      >
           <q-list class="q-pl-lg">
@@ -98,108 +82,34 @@
               </q-item-section>
             </q-item>
           </q-list>
-        </q-expansion-item>
-        <q-expansion-item
-          icon="map"
-          label="Maps"
-        >
-          <q-list class="q-pl-lg">
-            <q-item to="/Map" active-class="q-item-no-link-highlighting">
-              <q-item-section avatar>
-                <q-icon name="map"/>
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>Map</q-item-label>
-              </q-item-section>
-            </q-item>
-            <q-item to="/MapMarker" active-class="q-item-no-link-highlighting">
-              <q-item-section avatar>
-                <q-icon name="location_on"/>
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>Map Marker</q-item-label>
-              </q-item-section>
-            </q-item>
-            <q-item to="/StreetView" active-class="q-item-no-link-highlighting">
-              <q-item-section avatar>
-                <q-icon name="streetview"/>
-              </q-item-section>
-              <q-item-section>
-                <q-item-label>Street View</q-item-label>
-              </q-item-section>
-            </q-item>
-          </q-list>
-        </q-expansion-item>
-
-        <q-item to="/Mail" active-class="q-item-no-link-highlighting">
+        </q-expansion-item> -->
+        <q-item to="/WorkSchedule" active-class="my-menu-link" :active="link === 'workSchedule'" @click="link = 'workSchedule'">
           <q-item-section avatar>
-            <q-icon name="email"/>
+            <q-icon name="event_available"/>
           </q-item-section>
           <q-item-section>
-            <q-item-label>Mail</q-item-label>
+            <q-item-label>작업일정</q-item-label>
           </q-item-section>
         </q-item>
-
-        <q-item to="/directory" active-class="q-item-no-link-highlighting">
+        <q-item to="#" active-class="my-menu-link" :active="link === 'insureData'" @click="link = 'insureData'">
           <q-item-section avatar>
-            <q-icon name="card_giftcard"/>
+            <q-icon name="inventory"/>
           </q-item-section>
           <q-item-section>
-            <q-item-label>Directory</q-item-label>
+            <q-item-label>보험사자료</q-item-label>
           </q-item-section>
         </q-item>
-
-        <q-item to="/TreeTable" active-class="q-item-no-link-highlighting">
+        <q-item to="#" active-class="my-menu-link" :active="link === 'rpaHistory'" @click="link = 'rpaHistory'">
           <q-item-section avatar>
-            <q-icon name="list"/>
+            <q-icon name="history"/>
           </q-item-section>
           <q-item-section>
-            <q-item-label>TreeTable</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item to="/Charts" active-class="q-item-no-link-highlighting">
-          <q-item-section avatar>
-            <q-icon name="insert_chart"/>
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Charts</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item to="/Footer" active-class="q-item-no-link-highlighting">
-          <q-item-section avatar>
-            <q-icon name="info"/>
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Footer</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item to="/CardHeader" active-class="q-item-no-link-highlighting">
-          <q-item-section avatar>
-            <q-icon name="card_giftcard"/>
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Card Header</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item to="/Cards" active-class="q-item-no-link-highlighting">
-          <q-item-section avatar>
-            <q-icon name="card_giftcard"/>
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Cards</q-item-label>
-          </q-item-section>
-        </q-item> -->
-        <q-item to="/Tables" active-class="my-menu-link" :active="link === 'contactCrawl'" @click="link = 'contactCrawl'">
-          <q-item-section avatar>
-            <q-icon name="table_chart"/>
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>계약크롤링</q-item-label>
+            <q-item-label>RPA작업이력</q-item-label>
           </q-item-section>
         </q-item>
         <q-item to="/InsureFile" active-class="my-menu-link" :active="link === 'insureFile'" @click="link = 'insureFile'">
           <q-item-section avatar>
-            <q-icon name="check_circle_outline"/>
+            <q-icon name="folder"/>
           </q-item-section>
           <q-item-section>
             <q-item-label>보험사 파일</q-item-label>
@@ -207,85 +117,76 @@
         </q-item>
         <q-item to="/WorkerManagement" active-class="my-menu-link" :active="link === 'workerManagement'"  @click="link = 'workerManagement'">
           <q-item-section avatar>
-            <q-icon name="person"/>
+            <q-icon name="screen_search_desktop"/>
           </q-item-section>
           <q-item-section>
-            <q-item-label>작업자</q-item-label>
+            <q-item-label>작업자관리</q-item-label>
           </q-item-section>
         </q-item>
-
-
-        <!-- not completed-->
-        <!-- <q-item to="/Calendar" active-class="q-item-no-link-highlighting">
+        <q-item to="/#" active-class="my-menu-link" :active="link === 'workManagement'"  @click="link = 'workManagement'">
           <q-item-section avatar>
-            <q-icon name="date_range"/>
+            <q-icon name="build"/>
           </q-item-section>
           <q-item-section>
-            <q-item-label>Calendar</q-item-label>
-          </q-item-section>
-        </q-item> -->
-
-<!--        not completed-->
-<!--        <q-item to="/Taskboard" active-class="q-item-no-link-highlighting">-->
-<!--          <q-item-section avatar>-->
-<!--            <q-icon name="done"/>-->
-<!--          </q-item-section>-->
-<!--          <q-item-section>-->
-<!--            <q-item-label>Taskboard</q-item-label>-->
-<!--          </q-item-section>-->
-<!--        </q-item>-->
-
-        <!-- <q-item to="/Pagination" active-class="q-item-no-link-highlighting">
-          <q-item-section avatar>
-            <q-icon name="date_range"/>
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Pagination</q-item-label>
+            <q-item-label>작업관리</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item to="/Ecommerce" active-class="q-item-no-link-highlighting">
+        <q-item to="/#" active-class="my-menu-link" :active="link === 'monitoring'"  @click="link = 'monitoring'">
           <q-item-section avatar>
-            <q-icon name="shopping_cart"/>
+            <q-icon name="monitor"/>
           </q-item-section>
           <q-item-section>
-            <q-item-label>Product Catalogues</q-item-label>
+            <q-item-label>모니터링</q-item-label>
           </q-item-section>
-        </q-item> -->
-        <!-- <q-expansion-item
-          icon="menu_open"
-          label="Menu Levels"
-        >
-          <q-item class="q-ml-xl" active-class="q-item-no-link-highlighting">
-            <q-item-section>
-              <q-item-label>Level 1</q-item-label>
-            </q-item-section>
-          </q-item>
-          <q-expansion-item
-            :header-inset-level="0.85"
-            label="Level 2"
-          >
-            <q-item class="q-ml-xl" style="margin-left: 55px  !important;" active-class="q-item-no-link-highlighting">
-              <q-item-section>
-                <q-item-label>Level 2.1</q-item-label>
-              </q-item-section>
-            </q-item>
-            <q-expansion-item
-              :header-inset-level="1"
-              label="Level 2.2"
-            >
-              <q-item style="margin-left: 65px  !important;" active-class="q-item-no-link-highlighting">
-                <q-item-section>
-                  <q-item-label>Level 2.2.1</q-item-label>
-                </q-item-section>
-              </q-item>
-              <q-item style="margin-left: 65px  !important;" active-class="q-item-no-link-highlighting">
-                <q-item-section>
-                  <q-item-label>Level 2.2.2</q-item-label>
-                </q-item-section>
-              </q-item>
-            </q-expansion-item>
-          </q-expansion-item>
-        </q-expansion-item> -->
+        </q-item>
+        <q-item to="/#" active-class="my-menu-link" :active="link === 'account'"  @click="link = 'account'">
+          <q-item-section avatar>
+            <q-icon name="people"/>
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>계정</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item to="/#" active-class="my-menu-link" :active="link === 'messageHistory'"  @click="link = 'messageHistory'">
+          <q-item-section avatar>
+            <q-icon name="settings_cell"/>
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>문자수신이력</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item to="/#" active-class="my-menu-link" :active="link === 'customerManagement'"  @click="link = 'customerManagement'">
+          <q-item-section avatar>
+            <q-icon name="manage_accounts"/>
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>회원관리</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item to="/#" active-class="my-menu-link" :active="link === 'report'"  @click="link = 'report'">
+          <q-item-section avatar>
+            <q-icon name="bug_report"/>
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>결과 보고서</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item to="/#" active-class="my-menu-link" :active="link === 'gaNotice'"  @click="link = 'gaNotice'">
+          <q-item-section avatar>
+            <q-icon name="notifications"/>
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>GA공지</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item to="/#" active-class="my-menu-link" :active="link === 'gaLink'"  @click="link = 'gaLink'">
+          <q-item-section avatar>
+            <q-icon name="link"/>
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>GA/보험사 링크</q-item-label>
+          </q-item-section>
+        </q-item>
       </q-list>
     </q-drawer>
 
@@ -311,9 +212,8 @@ export default defineComponent({
 
   setup () {
     const leftDrawerOpen = ref(false)
-    const title = ref('계약크롤링')
     return {
-      link: ref('contactCrawl'),
+      link: ref('workSchedule'),
       leftDrawerOpen,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
@@ -321,12 +221,11 @@ export default defineComponent({
       changeTitle (value) {
           title.value = value
       },
-      title
     }
   }
 })
 </script>
 <style lang="sass">
 .my-menu-link
-  color: cadetblue
+  color: #00FFFF
 </style>
