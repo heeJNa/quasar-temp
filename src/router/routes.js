@@ -11,8 +11,9 @@ const routes = [
       {path: '/TreeTable', component: () => import('pages/TreeTable.vue')},
       {path: '/StreetView', component: () => import('pages/StreetView.vue')},
       {path: '/Cards', component: () => import('pages/Cards.vue')},
-      {path: '/Tables', component: () => import('pages/Tables.vue')},
-      {path: '/Contact', component: () => import('pages/Contact.vue')},
+      {path: '/Tables',name:'계약크롤링', component: () => import('pages/Tables.vue')},
+      {path: '/Contact',component: () => import('pages/Contact.vue')},
+      {path: '/workerManagement',name:'작업자' ,component: () => import('pages/WorkerManagement.vue')},
       {path: '/Checkout', component: () => import('pages/Checkout.vue')},
       {path: '/Ecommerce', component: () => import('pages/ProductCatalogues.vue')},
       {path: '/Pagination', component: () => import('pages/Pagination.vue')},
@@ -21,6 +22,7 @@ const routes = [
       {path: '/Directory', component: () => import('pages/Directory.vue')},
       {path: '/Footer', component: () => import('pages/Footer.vue')},
       {path: '/CardHeader', component: () => import('pages/CardHeader.vue')},
+      {path: '/InsureFile',name:'보험사 파일', component: () => import('pages/InsureFile.vue')},
 
       // Not completed yet
       // {path: '/Taskboard', component: () => import('pages/TaskBoard.vue')},

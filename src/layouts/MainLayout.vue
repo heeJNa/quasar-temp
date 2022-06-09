@@ -11,7 +11,7 @@
           aria-label="Menu"
         />
         <q-toolbar-title>
-          {{title}}
+          {{$route.name}}
         </q-toolbar-title>
         <q-space/>
         <div class="q-gutter-sm row items-center no-wrap">
@@ -189,7 +189,7 @@
             <q-item-label>Cards</q-item-label>
           </q-item-section>
         </q-item> -->
-        <q-item to="/Tables" active-class="q-item-no-link-highlighting" @click="changeTitle('계약크롤링')">
+        <q-item to="/Tables" active-class="my-menu-link" :active="link === 'contactCrawl'" @click="link = 'contactCrawl'">
           <q-item-section avatar>
             <q-icon name="table_chart"/>
           </q-item-section>
@@ -197,22 +197,23 @@
             <q-item-label>계약크롤링</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item to="/Contact" active-class="q-item-no-link-highlighting" @click="changeTitle('Contact')">
-          <q-item-section avatar>
-            <q-icon name="person"/>
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Contact</q-item-label>
-          </q-item-section>
-        </q-item>
-        <!-- <q-item to="/Checkout" active-class="q-item-no-link-highlighting">
+        <q-item to="/InsureFile" active-class="my-menu-link" :active="link === 'insureFile'" @click="link = 'insureFile'">
           <q-item-section avatar>
             <q-icon name="check_circle_outline"/>
           </q-item-section>
           <q-item-section>
-            <q-item-label>Checkout</q-item-label>
+            <q-item-label>보험사 파일</q-item-label>
           </q-item-section>
-        </q-item> -->
+        </q-item>
+        <q-item to="/WorkerManagement" active-class="my-menu-link" :active="link === 'workerManagement'"  @click="link = 'workerManagement'">
+          <q-item-section avatar>
+            <q-icon name="person"/>
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>작업자</q-item-label>
+          </q-item-section>
+        </q-item>
+
 
         <!-- not completed-->
         <!-- <q-item to="/Calendar" active-class="q-item-no-link-highlighting">
@@ -312,6 +313,7 @@ export default defineComponent({
     const leftDrawerOpen = ref(false)
     const title = ref('계약크롤링')
     return {
+      link: ref('contactCrawl'),
       leftDrawerOpen,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
@@ -324,3 +326,7 @@ export default defineComponent({
   }
 })
 </script>
+<style lang="sass">
+.my-menu-link
+  color: cadetblue
+</style>
